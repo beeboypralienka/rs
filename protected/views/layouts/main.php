@@ -26,10 +26,20 @@
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
 
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
+	<div id="mainMbMenu">
+		<?php //$this->widget('zii.widgets.CMenu',array(			  
+				$this->widget('application.extensions.mbmenu.MbMenu',array(			  
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Data','url'=>'#','items'=>array(
+					array('label'=>'Pasien', 'url'=>array('/pasien/index')),
+					array('label'=>'Dokter', 'url'=>array('/dokter/index')),
+					array('label'=>'Spesialis', 'url'=>array('/spesialis/index')),
+				),),
+				//array('label'=>'Pasien', 'url'=>array('/pasien/index')),
+				//array('label'=>'Dokter', 'url'=>array('/dokter/index')),
+				//array('label'=>'Spesialis', 'url'=>array('/spesialis/index')),
+				array('label'=>'Pendaftaran', 'url'=>array('/pendaftaran/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
@@ -48,9 +58,9 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by Fachrul Pralienka BM<br/>
 		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		Powered by beeboypralienka
 	</div><!-- footer -->
 
 </div><!-- page -->
